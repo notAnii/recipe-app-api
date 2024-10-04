@@ -1,13 +1,12 @@
 """Test for the django admin modifications."""
-
 from django.test import TestCase
 from django.contrib.auth import get_user_model
 from django.urls import reverse
 from django.test import Client
 
+
 class AdminSiteTests(TestCase):
     """Test for the Django Admin."""
-
     def setUp(self):
         """Create user and client."""
         self.client = Client()
@@ -43,5 +42,3 @@ class AdminSiteTests(TestCase):
         res = self.client.get(url)
 
         self.assertEqual(res.status_code, 200)
-
-
